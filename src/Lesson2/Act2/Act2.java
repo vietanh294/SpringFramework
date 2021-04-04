@@ -1,9 +1,9 @@
-package Lesson2;
+package Lesson2.Act2;
 
-public class Lesson2 {
+public class Act2 {
     public static void main(String[] args) {
-        MyThread myThread1 = new MyThread("ABCD", 3500);
-        MyThread myThread2 = new MyThread("EFGH",2500);
+        MyThread myThread1 = new MyThread("ABCDE", 4000);
+        MyThread myThread2 = new MyThread("FGHIJ", 2500);
         myThread1.start();
         myThread2.start();
     }
@@ -21,7 +21,7 @@ class MyThread extends Thread{
     @Override
     public void run() {
         while (true){
-            System.out.println(System.currentTimeMillis() + " Thread: " + name);
+            System.out.println( System.currentTimeMillis() + " Thread: " + name);
             try {
                 Thread.sleep(sleep);
             } catch (InterruptedException e) {
