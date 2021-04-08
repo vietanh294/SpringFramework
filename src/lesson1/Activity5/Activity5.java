@@ -1,13 +1,19 @@
 package lesson1.Activity5;
 
+import java.util.Scanner;
+
 public class Activity5 {
     public static void main(String[] args) {
         BankAccount bankAccount =new BankAccount();
-
-        WithdrawAccount withdrawAccountHusband = new WithdrawAccount(bankAccount,"HusBand",15000000);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập số tiền chồng muốn rút:");
+        long wd1 = scanner.nextLong();
+        System.out.println("Nhập số tiền vợ muốn rút:");
+        long wd2 = scanner.nextLong();
+        WithdrawAccount withdrawAccountHusband = new WithdrawAccount(bankAccount,"HusBand",wd1);
         withdrawAccountHusband.setName("husbandThread");
         withdrawAccountHusband.start();
-        WithdrawAccount withdrawAccountWife = new WithdrawAccount(bankAccount,"Wife",20000000);
+        WithdrawAccount withdrawAccountWife = new WithdrawAccount(bankAccount,"Wife",wd2);
         withdrawAccountWife.setName("wifeThread");
         withdrawAccountWife.start();
     }
