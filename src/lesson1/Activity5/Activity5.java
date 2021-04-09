@@ -24,7 +24,7 @@ class BankAccount {
     public  synchronized void checkAccountBalance(String threadName , long withDrawAmount){
         System.out.print(threadName + " need: ");
         System.out.println(withDrawAmount);
-        if( amount > withDrawAmount){
+        if( amount >= withDrawAmount){
             System.out.println( threadName + " withdraw successful: " + withDrawAmount);
             amount = amount -withDrawAmount;
         } else {
