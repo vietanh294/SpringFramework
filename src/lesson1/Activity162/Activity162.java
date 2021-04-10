@@ -36,27 +36,15 @@ public class Activity162 {
 }
 class CheckDivisorQuantity {
     int divisorQuantity ( int number1, int counter1 ){
-        int theMagicNumber1= number1/2 +1;
-        int theMagicNumber2 = number1/3+1;
-        if (number1 %2 ==0 && number1 % 3 == 0){
-            counter1 =2;
-        for (int j = 1; j <= theMagicNumber2; j++) {
+        int theMagicNumber1= (int) Math.sqrt(number1) +1;
+
+        for (int j = 1; j <= theMagicNumber1; j++) {
             if(number1 % j == 0){
                 counter1 =counter1 +1;
             }
-        }} else if (number1 %2 ==0 ){
-            counter1 =1;
-            for (int j = 1; j <= theMagicNumber1; j++) {
-                if(number1 % j == 0){
-                    counter1 =counter1 +1;
-                }
-            }}
-        else {
-            counter1 =0;
-            for (int j = 1; j <= number1; j++) {
-                if(number1 % j == 0){
-                    counter1 =counter1 +1;
-        }}}
+        }
+        counter1 =counter1*2;
+
         return counter1;
     }
     public void updateMaxNumber(int theCounter, int theNumber){
