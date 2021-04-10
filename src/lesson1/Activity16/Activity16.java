@@ -74,6 +74,7 @@ public class Activity16 {
                    checkDivisorQuantity.updateMaxNumber(theCounter,i);
 
             }
+            System.out.println(Thread.currentThread().getName());
             System.out.print("Các Số có số Ước sô lớn nhất là:  ");
             for (int n :
                     Activity16.theNumberMaxCounter) {
@@ -85,6 +86,7 @@ public class Activity16 {
             Activity16.endMilli2 =System.currentTimeMillis();
             Activity16.distance = Activity16.endMilli2 -Activity16.startMilli2;
             System.out.println("Time out: " + Activity16.distance+ "ms");
+            System.out.println();
         }
     }
 
