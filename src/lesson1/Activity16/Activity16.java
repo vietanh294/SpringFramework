@@ -1,9 +1,12 @@
 package lesson1.Activity16;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Activity16 {
-    public static int counter = 0;
     public static int theMaxCounter = 0;
-    public static int number = 0;
+    public static List<Integer> theNumberMaxCounter = new ArrayList<>();
     public static long startMilli2 = System.currentTimeMillis();
     public static long endMilli2;
     public static long distance;
@@ -39,10 +42,13 @@ public class Activity16 {
                 }
             } return counter1;
         }
-        public void updateMaxNumber(int a, int b){
-            if (a> Activity16.theMaxCounter){
-                Activity16.number = b;
-                Activity16.theMaxCounter = a ;
+        public void updateMaxNumber(int theCounter, int theNumber){
+            if (theCounter> Activity16.theMaxCounter){
+                Activity16.theNumberMaxCounter.removeAll(Activity16.theNumberMaxCounter);
+                Activity16.theNumberMaxCounter.add(theNumber);
+                Activity16.theMaxCounter = theCounter ;
+            } else  if (theCounter == Activity16.theMaxCounter) {
+                Activity16.theNumberMaxCounter.add(theNumber);
             }
         }
     }
@@ -68,12 +74,17 @@ public class Activity16 {
                    checkDivisorQuantity.updateMaxNumber(theCounter,i);
 
             }
-            System.out.println("Số có số Ước sô lớn nhất là:  " + Activity16.number);
+            System.out.print("Các Số có số Ước sô lớn nhất là:  ");
+            for (int n :
+                    Activity16.theNumberMaxCounter) {
+                System.out.print(n + "   " );
+            }
+            System.out.println();
             System.out.println("số Ước sô lớn nhất là:  " + Activity16.theMaxCounter);
             System.out.println(System.currentTimeMillis() + ": Endtime");
             Activity16.endMilli2 =System.currentTimeMillis();
             Activity16.distance = Activity16.endMilli2 -Activity16.startMilli2;
-            System.out.println(Activity16.distance+ "ms");
+            System.out.println("Time out: " + Activity16.distance+ "ms");
         }
     }
 
